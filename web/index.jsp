@@ -8,9 +8,15 @@
 <body>
 
 <h1>List of albums</h1>
-
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<c:choose>
+<c:when test="${cookie.firstNameCookie.value != null}">
 <p>Welcome back, ${cookie.firstNameCookie.value}</p>
-
+</c:when>
+<c:otherwise>
+    <p>Welcome back,</p>
+</c:otherwise>
+</c:choose>
 <p>
 <a href="download?action=checkUser&amp;productCode=8601">
     86 (the band) - True Life Songs and Pictures
